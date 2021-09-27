@@ -5,32 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 15:33:02 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/22 16:24:50 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/23 13:44:58 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/23 15:58:51 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Fixed.hpp"
 
 int main()
 {
-    Weapon club = Weapon("crude spiked club");
-    HumanA bob("Bob", club);
+    Fixed a;
+    Fixed const b(10);
+    Fixed const c(42.42f);
+    Fixed const d(b);
+
+    a = Fixed(1234.4321f);
     
-    bob.attack();
-    club.setType("some other type of club");
-    bob.attack();
-
-    club = Weapon("crude spiked club");
-    HumanB jim("Jim");
-
-    jim.setWeapon(club);
-    jim.attack();
-
-    club.setType("some other type of club");
-    jim.attack();
+    std::cout << "a is " << a << std::endl;
+    std::cout << "b is " << b << std::endl;
+    std::cout << "c is " << c << std::endl;
+    std::cout << "d is " << d << std::endl;
+    
+    // std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    // std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    // std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    // std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     
     return (0);
 }

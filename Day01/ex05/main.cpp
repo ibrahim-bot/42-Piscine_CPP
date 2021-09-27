@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichougra <ichougra@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 10:57:26 by ichougra          #+#    #+#             */
-/*   Updated: 2021/03/19 14:43:23 by ichougra         ###   ########lyon.fr   */
+/*   Created: 2021/09/22 18:01:38 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/23 17:15:50 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Human.hpp"
+#include "Karen.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    Human bob;
+    Karen karen;
 
-    std::cout << bob.identify() << std::endl;
-    //std::cout << bob.getBrain().identify() << std::endl;
+    if (ac == 2)
+        karen.complain(av[1]);
     return (0);
 }

@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:11:12 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:35:39 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/23 15:28:13 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
-#include "Zombie.hpp"
+#include <string>
 
-int main()
+class Fixed
 {
-    Zombie zombie1("ours");
-    zombie1.announce();
-    
-    Zombie *zombie = newZombie("tigre");
-    zombie->announce();
+    private:
+        int _fixe;
+        const static int bit = 8;
 
-    randomChump("koala");
-    
-    delete zombie;
-    return (0);
-}
+    public:
+        Fixed( void );
+        Fixed(Fixed const &);
+        ~Fixed();
+        void setRawBits(int const);
+        int getRawBits(void) const;
+
+        Fixed & operator=(Fixed const & rhs);
+};
+
+
+#endif

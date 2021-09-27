@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:11:12 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:35:39 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/17 18:00:33 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/20 18:30:03 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-int main()
+# include <iostream>
+# include <string>
+
+class Zombie
 {
-    Zombie zombie1("ours");
-    zombie1.announce();
-    
-    Zombie *zombie = newZombie("tigre");
-    zombie->announce();
+private:
+        std::string _name;
+public:
+    Zombie();
+    Zombie(std::string name);
+    ~Zombie();
+    void announce(void) const;
+};
 
-    randomChump("koala");
-    
-    delete zombie;
-    return (0);
-}
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
+
+#endif

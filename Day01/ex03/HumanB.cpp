@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:11:12 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:35:39 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/21 15:36:37 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/22 16:23:37 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int main()
+HumanB::HumanB(std::string name)
 {
-    Zombie zombie1("ours");
-    zombie1.announce();
-    
-    Zombie *zombie = newZombie("tigre");
-    zombie->announce();
+    this->_name = name;
+    return ;
+}
 
-    randomChump("koala");
-    
-    delete zombie;
-    return (0);
+HumanB::~HumanB()
+{
+    return ;
+}
+
+void HumanB::attack()
+{
+    std::cout << this->_name << " attacks with his " << this->_arm->getType() << std::endl;
+    return ;
+}
+
+void HumanB::setWeapon(Weapon& arm)
+{
+    this->_arm = &arm;
+    return ;
 }

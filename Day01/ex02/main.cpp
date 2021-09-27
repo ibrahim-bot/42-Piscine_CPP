@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichougra <ichougra@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 15:33:24 by ichougra          #+#    #+#             */
-/*   Updated: 2021/03/19 13:04:53 by ichougra         ###   ########lyon.fr   */
+/*   Created: 2021/09/21 15:18:15 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/21 15:30:59 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include <iostream>
 
 int main()
 {
-    Zombie  *zombie;
-    Zombie  *Vzombie;
-    ZombieEvent Zombie;
+    std::string base = "HI THIS IS BRAIN";
 
-    Zombie.setZombieType("Gros");
-    Vzombie = Zombie.newZombie("ichougra");
+    std::string *stringPTR = &base;
+    std::string &stringREF = base;
 
-    zombie = Zombie.randomChump();
-
-    delete Vzombie;
-    delete zombie;
+    std::cout << "ADRESS BASE = " << &base << std::endl;    
+    std::cout << "ADRESS PTR  = " << stringPTR << std::endl;
+	std::cout << "ADRESS REF  = "<< &stringREF << std::endl;
+    
+    std::cout << std::endl << "STR BASE = " << base << std::endl;
+	std::cout << "STR PTR  = " << *stringPTR << std::endl;
+	std::cout << "STR REF  = " << stringREF << std::endl;
     return (0);
 }

@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:11:12 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:35:39 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/23 13:44:58 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/23 15:28:17 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
 int main()
 {
-    Zombie zombie1("ours");
-    zombie1.announce();
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
     
-    Zombie *zombie = newZombie("tigre");
-    zombie->announce();
+    c = b;
 
-    randomChump("koala");
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
     
-    delete zombie;
     return (0);
 }

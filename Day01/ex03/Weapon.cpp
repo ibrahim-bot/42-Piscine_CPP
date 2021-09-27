@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:11:12 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:35:39 by ibrahim          ###   ########.fr       */
+/*   Created: 2021/09/21 15:35:21 by ibrahim           #+#    #+#             */
+/*   Updated: 2021/09/22 16:16:48 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon( std::string type)
 {
-    Zombie zombie1("ours");
-    zombie1.announce();
-    
-    Zombie *zombie = newZombie("tigre");
-    zombie->announce();
+    this->_type = type;
+    return;
+}
 
-    randomChump("koala");
-    
-    delete zombie;
-    return (0);
+Weapon::~Weapon()
+{
+    return;
+}
+
+void    Weapon::setType( std::string type )
+{
+    this->_type = type;
+    return;
+}
+
+std::string& Weapon::getType()
+{
+    return (this->_type); 
 }
