@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 16:27:29 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/24 16:54:00 by ibrahim          ###   ########.fr       */
+/*   Updated: 2021/09/28 13:45:08 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ int verif_space(std::string s1)
 int main(int ac, char **av)
 {
     std::string Filename;
-    std::string output;
+    std::string str;
     std::string buffer;
     std::string s1;
     std::string s2;
-   
+    size_t	end_pos = 0;
+	size_t	first_pos = 0;
+
     if (ac != 4)
     {
         std::cerr << "Error: ./replace (filename) (s1) (s2)" << std::endl;
@@ -49,14 +51,13 @@ int main(int ac, char **av)
 		std::cerr << "Error: A files is empty" << std::endl;
 		return (1);
 	}
-    output = Filename + ".replace";
     std::ifstream read(av[1]);
     if (read.fail())
     {
         std::cout << "Error: Opening file" << std::endl;
         return (1);
     }
-    std::ofstream out("filename.replace");
+    std::ofstream out("FILENAME.replace");
     if (out.fail())
     {
         std::cout << "Error: creating file" << std::endl;
@@ -64,24 +65,19 @@ int main(int ac, char **av)
     }
     while (std::getline(read, buffer))
     {
-
-        while (buffer.find(s1) != std::string::npos)
+        first_pos = 0;
+        end_pos = 0;
+        while ((end_pos = buffer.find(s1, first_pos)) != std::string::npos)
         {
-            buffer.replace(buffer.find(s1), s1.length(), s2);
+            str.append(buffer, first_pos, end_pos - first_pos);
+            str.append(s2);
+            first_pos = end_pos + s1.size();
         }
-        
-        out << buffer;
-        out << std::endl;
+        str.append(buffer, first_pos);
+        str.append("\n");
     }
-
-
-    
-    if (buffer == "")
-    {
-        out << std::endl;
-    }
+    out << str;
     read.close();
     out.close();
-    
     return (0);
 }

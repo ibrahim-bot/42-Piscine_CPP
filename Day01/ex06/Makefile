@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/22 16:28:13 by ibrahim           #+#    #+#              #
-#    Updated: 2021/09/28 11:03:07 by ichougra         ###   ########.fr        #
+#    Created: 2021/09/22 18:00:45 by ibrahim           #+#    #+#              #
+#    Updated: 2021/09/22 18:09:33 by ibrahim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 
-NAME	=	replace
+NAME	=	Karen
 
 CFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp Karen.cpp
 
 OBJ	=	$(SRCS:.cpp=.o)
 
