@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:28:55 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 18:13:55 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
 
-class Fixed
+class Cat : public Animal
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
-
-    public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
-
-        Fixed & operator=(Fixed const & rhs);
+private:
+    /* data */
+public:
+    Cat(/* args */);
+    virtual ~Cat();
 };
 
 

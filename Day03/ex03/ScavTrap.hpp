@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/09/29 16:16:39 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 13:46:07 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SCAVTRAPP_HPP
+# define SCAVTRAPP_HPP
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class Fixed
+class ScavTrap : virtual public ClapTrap
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
-
-    public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
-
-        Fixed & operator=(Fixed const & rhs);
+private:
+    /* data */
+public:
+    ScavTrap();
+    ScavTrap(std::string name);
+    ~ScavTrap();
+    void guardGate();
 };
 
 

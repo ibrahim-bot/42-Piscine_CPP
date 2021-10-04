@@ -5,24 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:58 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:59 by ichougra         ###   ########.fr       */
+/*   Created: 2021/09/29 14:54:21 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 17:04:20 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
-{
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    
-    c = b;
+{    
+    DiamondTrap diamond("CITRON");
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    diamond.attack("TOMATE");
+    diamond.beRepaired(300);
+    diamond.takeDamage(500);
+    diamond.attack("TOMATE");
+    std::cout << std::endl;
+    diamond.guardGate();
+    diamond.highFivesGuys();
+    diamond.whoAmI();
+    std::cout << std::endl;
     
     return (0);
-}
+} 

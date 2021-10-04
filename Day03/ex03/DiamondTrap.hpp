@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 13:09:52 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 13:47:22 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class Fixed
+class DiamondTrap : public FragTrap, public ScavTrap
 {
     private:
-        int _fixe;
-        const static int bit = 8;
+        std::string _name;
 
     public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
-
-        Fixed & operator=(Fixed const & rhs);
+        DiamondTrap( std::string name );
+        ~DiamondTrap();
+        void whoAmI();
 };
-
 
 #endif

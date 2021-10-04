@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/09/29 14:54:21 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 12:43:11 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-#include <iostream>
-#include <string>
-
-class Fixed
+int main()
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
+    ClapTrap clap("POIRE");
 
-    public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
+    clap.attack("JIJI");
+    clap.takeDamage(15);
+    clap.beRepaired(30);
+    clap.attack("JIJI");
+    
+    ScavTrap Scav("POMME");
 
-        Fixed & operator=(Fixed const & rhs);
-};
-
-
-#endif
+    Scav.attack("BANANE");
+    Scav.takeDamage(50);
+   // clap.attack("WIII");
+    Scav.beRepaired(150);
+    Scav.attack("ANANAS");
+    Scav.guardGate();
+    
+    return (0);
+}

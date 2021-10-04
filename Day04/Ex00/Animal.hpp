@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:23:37 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 18:20:47 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
-#include <string>
 
-class Fixed
+class Animal
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
+    protected:
+        std::string _type;
 
     public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
-
-        Fixed & operator=(Fixed const & rhs);
+        Animal(/* args */);
+        Animal( std::string );
+        virtual ~Animal();
+        virtual void getType();
 };
-
 
 #endif

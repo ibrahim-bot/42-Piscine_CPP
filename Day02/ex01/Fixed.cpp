@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:44:53 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/23 15:44:52 by ibrahim          ###   ########.fr       */
+/*   Updated: 2021/09/29 14:40:55 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Fixed::Fixed(const float flo)
 Fixed::Fixed(const int val)
 {
     this->_fixe = val << this->bit;
+    std::cout << "fixe = " << (val << this->bit) << std::endl;
 	std::cout << "Int constructor called" << std::endl;
     return ;
 }
@@ -48,7 +49,6 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
     return (this->_fixe);
 }
 
@@ -60,7 +60,8 @@ void Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat(void) const
 {
-	return ((float) this->getRawBits() / (float)(1 << this->bit));
+    std::cout << "\n" << (float)this->getRawBits() << "," << (float)(1 << this->bit) << "\n";
+	return ((float)this->getRawBits() / (float)(1 << this->bit));
 }
 
 int		Fixed::toInt(void) const
@@ -75,8 +76,9 @@ Fixed & Fixed::operator=(Fixed const &rhs)
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &out, Fixed const &rhs)
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
 {
-	out << rhs.toFloat();
-	return out;
+    std::cout << "Assignment operator called" << std::endl;
+	o << rhs.toFloat();
+	return o;
 }

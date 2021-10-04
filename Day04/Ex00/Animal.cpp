@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:23:19 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 18:20:20 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Animal.hpp"
 
-#include <iostream>
-#include <string>
-
-class Fixed
+Animal::Animal()
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
+    std::cout << "Constructor Animal called" << std::endl;
+    return ;
+}
 
-    public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
+Animal::Animal(std::string type)
+{
+    this->_type = type;
+    std::cout << "Constructor Animal called" << std::endl;
+    return ;
+}
 
-        Fixed & operator=(Fixed const & rhs);
-};
-
-
-#endif
+Animal::~Animal()
+{
+    std::cout << "Destructor Claptrap called" << std::endl;
+    return ;
+}

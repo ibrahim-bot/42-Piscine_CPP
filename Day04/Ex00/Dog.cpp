@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 13:44:50 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:24:57 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/04 18:18:52 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Dog.hpp"
 
-#include <iostream>
-#include <string>
-
-class Fixed
+Dog::Dog(/* args */)
 {
-    private:
-        int _fixe;
-        const static int bit = 8;
+    std::cout << "Constructor Dog called" << std::endl;
+    return ;
+}
 
-    public:
-        Fixed( void );
-        Fixed(Fixed const &);
-        ~Fixed();
-        void setRawBits(int const);
-        int getRawBits(void) const;
-
-        Fixed & operator=(Fixed const & rhs);
-};
-
-
-#endif
+Dog::~Dog()
+{
+    std::cout << "Destructor Dog called" << std::endl;
+    return ;
+}
