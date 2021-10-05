@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 14:49:09 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 15:53:56 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Ice.hpp"
 
-Dog::Dog(/* args */)
+Ice::Ice()
 {
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
+    this->_type = "ice";
     return ;
 }
 
-Dog::~Dog()
+Ice::~Ice()
 {
-    std::cout << "Destructor Dog called" << std::endl;
     return ;
 }
 
-void Dog::makeSound() const
+AMateria* Ice::clone() const
 {
-    std::cout << "I'm a Dog !" << std::endl;
-    return ;
-}
-
-std::string Dog::getType() const
-{
-    return (this->_type);
+    
 }

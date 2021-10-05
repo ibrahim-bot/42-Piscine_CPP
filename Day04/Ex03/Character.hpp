@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 15:06:04 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 16:52:58 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-Dog::Dog(/* args */)
-{
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
-    return ;
-}
+#include "ICharacter.hpp"
 
-Dog::~Dog()
+class Character : public ICharacter
 {
-    std::cout << "Destructor Dog called" << std::endl;
-    return ;
-}
+    private:
+        /* data */
+    public:
+        Character(/* args */);
+        ~Character();
+};
 
-void Dog::makeSound() const
-{
-    std::cout << "I'm a Dog !" << std::endl;
-    return ;
-}
+#endif
 
-std::string Dog::getType() const
-{
-    return (this->_type);
-}
+
+list 
+
+arg;
+exec;
+pip;echoh
+redir;

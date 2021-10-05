@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 14:52:58 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 15:03:38 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-Dog::Dog(/* args */)
-{
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
-    return ;
-}
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-Dog::~Dog()
+class MateriaSource : public IMateriaSource
 {
-    std::cout << "Destructor Dog called" << std::endl;
-    return ;
-}
+    private:
+        /* data */
+    public:
+        MateriaSource(/* args */);
+        ~MateriaSource();
+        virtual void learnMateria(AMateria*);
+        virtual AMateria* createMateria(std::string const & type);
+};
 
-void Dog::makeSound() const
-{
-    std::cout << "I'm a Dog !" << std::endl;
-    return ;
-}
 
-std::string Dog::getType() const
-{
-    return (this->_type);
-}
+#endif

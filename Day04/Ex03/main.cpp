@@ -5,39 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:30:48 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:03:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 14:24:04 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 15:54:15 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    
-    
-    // delete i;
-    // delete j;
-    // delete meta;
-    
-    const WrongAnimal* beta = new WrongAnimal();
-    const WrongAnimal* cat = new WrongCat();
+    IMateriaSource* src = new MateriaSource();
 
-    beta->makeSound();
-    cat->makeSound();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+
     
-    return (0);
+    ICharacter* me = new Character("me");
+
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    
+    
+    ICharacter* bob = new Character("bob");
+    
+    me->use(0, *bob);
+    me->use(1, *bob);
+    
+    
+    delete bob;
+    delete me;
+    delete src;
+    
+    return 0;
 }

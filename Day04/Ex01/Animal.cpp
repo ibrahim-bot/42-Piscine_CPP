@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:23:19 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 14:22:12 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog(/* args */)
+Animal::Animal()
 {
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
+    std::cout << "Constructor Animal called" << std::endl;
     return ;
 }
 
-Dog::~Dog()
+Animal::Animal(std::string type)
 {
-    std::cout << "Destructor Dog called" << std::endl;
+    this->_type = type;
+    std::cout << "Constructor Animal called" << std::endl;
     return ;
 }
 
-void Dog::makeSound() const
+Animal::~Animal()
 {
-    std::cout << "I'm a Dog !" << std::endl;
+    std::cout << "Destructor Animal called" << std::endl;
     return ;
 }
 
-std::string Dog::getType() const
+void Animal::makeSound() const
+{
+    std::cout << "I'm a Animal !" << std::endl;
+    return ;
+}
+
+std::string Animal::getType() const
 {
     return (this->_type);
 }

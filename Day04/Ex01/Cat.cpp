@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:29:48 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 14:22:24 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(/* args */)
+Cat::Cat(/* args */)
 {
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
+    this->_type = "Cat";
+    std::cout << "Constructor Cat called" << std::endl;
+    this->ideas = new Brain();
     return ;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-    std::cout << "Destructor Dog called" << std::endl;
+    std::cout << "Destructor Cat called" << std::endl;
+    delete this->ideas;
     return ;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-    std::cout << "I'm a Dog !" << std::endl;
+    std::cout << "I'm a Cat !" << std::endl;
     return ;
 }
 
-std::string Dog::getType() const
+std::string Cat::getType() const
 {
     return (this->_type);
 }

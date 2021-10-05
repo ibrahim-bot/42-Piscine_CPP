@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 13:05:18 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 13:31:20 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(/* args */)
+int main()
 {
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
-    return ;
-}
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-Dog::~Dog()
-{
-    std::cout << "Destructor Dog called" << std::endl;
-    return ;
-}
 
-void Dog::makeSound() const
-{
-    std::cout << "I'm a Dog !" << std::endl;
-    return ;
-}
-
-std::string Dog::getType() const
-{
-    return (this->_type);
+    delete j;//should not create a leak
+    delete i;
+    
+    return (0);
 }

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 12:51:53 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:23:37 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 14:22:16 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-Dog::Dog(/* args */)
-{
-    this->_type = "Dog";
-    std::cout << "Constructor Dog called" << std::endl;
-    return ;
-}
+#include <iostream>
 
-Dog::~Dog()
+class Animal
 {
-    std::cout << "Destructor Dog called" << std::endl;
-    return ;
-}
+    protected:
+        std::string _type;
 
-void Dog::makeSound() const
-{
-    std::cout << "I'm a Dog !" << std::endl;
-    return ;
-}
+    public:
+        Animal(/* args */);
+        Animal( std::string );
+        virtual ~Animal();
+        virtual void makeSound() const;
+        virtual std::string getType() const;
+};
 
-std::string Dog::getType() const
-{
-    return (this->_type);
-}
+#endif
