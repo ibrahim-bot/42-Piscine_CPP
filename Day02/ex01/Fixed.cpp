@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:44:53 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 14:40:55 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/12 16:59:41 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Fixed::Fixed(const float flo)
 Fixed::Fixed(const int val)
 {
     this->_fixe = val << this->bit;
-    std::cout << "fixe = " << (val << this->bit) << std::endl;
 	std::cout << "Int constructor called" << std::endl;
     return ;
 }
@@ -60,7 +59,6 @@ void Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat(void) const
 {
-    std::cout << "\n" << (float)this->getRawBits() << "," << (float)(1 << this->bit) << "\n";
 	return ((float)this->getRawBits() / (float)(1 << this->bit));
 }
 
@@ -78,7 +76,6 @@ Fixed & Fixed::operator=(Fixed const &rhs)
 
 std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
 {
-    std::cout << "Assignment operator called" << std::endl;
 	o << rhs.toFloat();
 	return o;
 }

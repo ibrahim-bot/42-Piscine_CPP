@@ -6,30 +6,53 @@
 /*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:44:58 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/23 15:58:51 by ibrahim          ###   ########.fr       */
+/*   Updated: 2021/10/13 18:53:04 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main()
+int main(void)
 {
     Fixed a;
-    Fixed const b(10);
-    Fixed const c(42.42f);
-    Fixed const d(b);
+    Fixed const b(Fixed(5.05f) * Fixed(2));
+    
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << Fixed::max(a, b) << std::endl;
 
-    a = Fixed(1234.4321f);
-    
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
-    
-    // std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-    // std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    // std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    // std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-    
-    return (0);
+
+    // Fixed op(10);
+    // Fixed op2(5);
+
+    // op = op + op2;
+    // std::cout << op.toInt() << std::endl;
+    // op = op - op2;
+    // std::cout << op.toInt() << std::endl;
+    // op = op * op2;
+    // std::cout << op.toInt() << std::endl;
+    // op = op / op;
+    // std::cout << op.toInt() << std::endl;
+
+    // Fixed egal(10);
+    // Fixed egal2(10);
+    // Fixed egal3(5);
+
+    // if (egal == egal2)
+    //     std::cout << "it's egal " << egal.toInt() << std::endl;
+    // if (egal != egal3)
+    //     std::cout << "it's not egal " << egal.toInt() << " and " << egal3.toInt() << std::endl;
+    // if (egal > egal3)
+    //     std::cout << "egal is superieur " << egal.toInt() << std::endl;
+    // if (egal3 < egal)
+    //     std::cout << "egal3 is inferior " << egal3.toInt() << std::endl;
+    //  if (egal3 <= egal)
+    //     std::cout << "egal3 is inferior or egal " << egal3.toInt() << std::endl;
+    // if (egal >= egal2)
+    //     std::cout << "egal is superior or egal " << egal.toInt() << std::endl;
+    return 0;
 }
