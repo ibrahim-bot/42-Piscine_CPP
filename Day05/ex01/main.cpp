@@ -6,28 +6,34 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:11:39 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/19 13:55:42 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat op("jiji", 2);
+        Bureaucrat op("JIJI", 2);
+        Bureaucrat b("TEST", 50);
+        Form t("NUIT", 50, 20);
+        Form bt("POIU", 40, 30);
         
-        std::cout << op  << std::endl;
-        op.incrementGrade();
-        std::cout << op  << std::endl;
-        op.decrementGrade();
-        op.decrementGrade();
-        std::cout << op  << std::endl;   
+        std::cout << t;
+
+        t.beSigned(op);
+        std::cout << t;
+
+        bt.beSigned(b);
+        std::cout << bt;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    
     return (0);
 }

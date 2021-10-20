@@ -6,28 +6,26 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:11:39 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:11:37 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-    try
-    {
-        Bureaucrat op("jiji", 2);
-        
-        std::cout << op  << std::endl;
-        op.incrementGrade();
-        std::cout << op  << std::endl;
-        op.decrementGrade();
-        op.decrementGrade();
-        std::cout << op  << std::endl;   
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    Intern someRandomIntern;
+    Form* rrf;
+    Bureaucrat boss("jiji", 1);
+    
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+
+    rrf->beSigned(boss);
+    boss.executeForm(*rrf);
     return (0);
 }

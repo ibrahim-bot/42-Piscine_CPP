@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:11:39 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/19 14:05:27 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/20 11:29:57 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-int main()
+#include "Form.hpp"
+#include <fstream>
+
+class ShrubberyCreationForm : public Form
 {
-    try
-    {
-        Bureaucrat op("jiji", 2);
+    private:
+        std::string _target;
+
+    public:
+        ShrubberyCreationForm(std::string target);
+        virtual ~ShrubberyCreationForm();
         
-        std::cout << op  << std::endl;
-        op.incrementGrade();
-        std::cout << op  << std::endl;
-        op.decrementGrade();
-        op.decrementGrade();
-        std::cout << op  << std::endl;   
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    return (0);
-}
+        void execute(Bureaucrat const & executor) const;
+};
+
+#endif

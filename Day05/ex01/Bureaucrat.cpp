@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:16:00 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:05:32 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/19 13:41:09 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,14 @@ void Bureaucrat::incrementGrade(void)
 Bureaucrat::~Bureaucrat()
 {
     return ;
+}
+
+void Bureaucrat::signForm(int form, Form &f) const
+{
+    if (form == 1)
+        std::cout << this->getName() << " signs " << f.getName() << std::endl;
+    else
+        std::cout << this->getName() << " cannot signs because " << f.getGrade() << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)

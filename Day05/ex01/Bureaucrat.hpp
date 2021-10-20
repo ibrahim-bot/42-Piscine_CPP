@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:16:09 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:05:33 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/19 13:49:26 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
     private:
@@ -41,7 +43,6 @@ class Bureaucrat
 
                 virtual const char *what() const throw();
         };
-
         Bureaucrat(void);
         Bureaucrat(std::string const name, int grade);
         Bureaucrat(const Bureaucrat &);
@@ -53,9 +54,11 @@ class Bureaucrat
         int         getGrade(void) const;
         std::string getName(void) const;
         
+        void signForm(int , Form &) const;
+        
         Bureaucrat  &operator=(const Bureaucrat &);
 };
 
-std::ostream &operator<< (std::ostream &, const Bureaucrat &);
+std::ostream &operator<<(std::ostream &, const Bureaucrat &);
 
 #endif

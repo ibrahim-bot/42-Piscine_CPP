@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:16:00 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:05:32 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:37:48 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,27 @@ void Bureaucrat::incrementGrade(void)
 Bureaucrat::~Bureaucrat()
 {
     return ;
+}
+
+void Bureaucrat::signForm(int form, Form &f) const
+{
+    if (form == 1)
+        std::cout << this->getName() << " signs " << f.getName() << std::endl;
+    else
+        std::cout << this->getName() << " cannot signs because " << f.getGrade() << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executs " << form.getName() << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << "Error: Form not sign or Bureaucrate not grade for execute" << std::endl;
+    }   
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
