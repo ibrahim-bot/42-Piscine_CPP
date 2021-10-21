@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 02:00:45 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/21 03:24:23 by ibrahim          ###   ########.fr       */
+/*   Updated: 2021/10/21 12:42:11 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void identify( Base & p)
 {
     try
     {
-        A & c_a = dynamic_cast<A &>(p);
+        A  c_a = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
         
     }
@@ -78,7 +78,7 @@ void identify( Base & p)
     
     try
     {
-        B & c_b = dynamic_cast<B &>(p);
+        B   c_b = dynamic_cast<B &>(p);
         std::cout << "B" << std::endl;
         
     }
@@ -89,7 +89,7 @@ void identify( Base & p)
     
     try
     {
-        C & c_c = dynamic_cast<C &>(p);
+        C   c_c = dynamic_cast<C &>(p);
         std::cout << "C" << std::endl;
         
     }
@@ -97,7 +97,6 @@ void identify( Base & p)
     {
         std::cout << "Failed ! for Class C." << std::endl;
     }
-       
 }
 
 int main(void)
