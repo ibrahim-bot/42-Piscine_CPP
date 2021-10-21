@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:37:13 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/20 19:29:39 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/21 01:29:56 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int parse_av(char *str, std::string v)
         if (ft_isalpha(str[i]) == 1 && ft_isalpha(str[i + 1]) == 1 
 		&& v != "nan" && v != "nanf" && v != "-inff" && v != "-inf" && v != "+inff" && v != "+inf")
 			return (1);
+        if (ft_isalpha(str[i]) == 1 && ft_isdigit(str[i + 1]) == 1)
+            return (1);
         i++;
     }
     return (0);
