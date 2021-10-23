@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:05:58 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/22 19:35:47 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/23 16:27:59 by ibrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define MUTANTSTACK_HPP
 
 #include <iostream>
-#include <vector>
-#include <list>
 #include <stack>
 
 template<typename T>
@@ -24,8 +22,13 @@ class MutantStack : private std::stack<T>
     public:
         MutantStack(/* args */) {};
         MutantStack<T>(MutantStack<T> const & src) { *this = src; }
-		MutantStack<T> & operator=(MutantStack<T> const & rhs) { if (this != &rhs) this->c = rhs.c; return *this; }
-        ~MutantStack() {};
+		MutantStack<T> & operator=(MutantStack<T> const & rhs) 
+        { 
+            if (*this != &rhs) 
+                *this = new std::stack<T>(rhs); 
+            return *this;
+        }
+        virtual ~MutantStack() {};
 
         using std::stack<T>::empty;
         using std::stack<T>::size;
@@ -33,9 +36,21 @@ class MutantStack : private std::stack<T>
         using std::stack<T>::push;
         using std::stack<T>::pop;
 
-        typedef typename T::iterator iterator;
+        typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+		typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
-        iterator begin() {return this->c.begin();}
+		iterator begin() {return std::stack<T>::c.begin();};
+		iterator end() {return std::stack<T>::c.end();};
+		const_iterator cbegin() const {return std::stack<T>::c.cbegin();};
+		const_iterator cend() const {return std::stack<T>::c.cend();};
+		reverse_iterator rbegin() {return std::stack<T>::c.rbegin();};
+		reverse_iterator rend() {return std::stack<T>::c.rend();};
+		const_reverse_iterator crbegin() const {return std::stack<T>::c.crbegin();};
+		const_reverse_iterator crend() const {return std::stack<T>::c.crend();};
+    
+    
 };
 
 #endif
