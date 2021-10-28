@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:47:03 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/04 13:36:05 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 14:53:21 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@
 class FragTrap : virtual public ClapTrap
 {
     private:
+        /* data */
 
     public:
+        FragTrap( void ) {return ;};
         FragTrap(std::string name);
+        FragTrap(FragTrap const &);
         ~FragTrap();
         void highFivesGuys(void);
+        void attack( std::string const & target );
+
+        FragTrap & operator=(FragTrap const &);
 };
-
-
-
-
-
 
 #endif

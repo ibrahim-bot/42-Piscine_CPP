@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:18:03 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:20:06 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:25:38 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 15:05:55 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : virtual public Animal
 {
     private:
-        /* data */
+        Brain* ideas;
+
     public:
         Dog(/* args */);
-        ~Dog();
-        void makeSound();
-};
+        Dog(Dog const &);
+        virtual ~Dog();
+        virtual std::string getType() const;
+        virtual void makeSound() const;
 
+        Dog & operator=(Dog const &);
+};
 
 #endif

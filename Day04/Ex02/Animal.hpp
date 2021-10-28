@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:04:24 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:07:54 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:23:37 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 15:27:42 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ class Animal
 
     public:
         Animal(/* args */);
+        Animal( std::string );
+        Animal(Animal const &);
         virtual ~Animal();
-        virtual void makeSound() = 0;
+        virtual void makeSound() const = 0;
+        virtual std::string getType() const;
+
+        Animal & operator=(Animal const &);
 };
 
 #endif

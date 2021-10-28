@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 18:01:43 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:08:17 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/26 12:49:38 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int nb_lvl(std::string level)
     return (0);   
 }
 
-void Karen::complain( std::string level )
+void Karen::karenFilter( std::string level )
 {
     int nb = nb_lvl(level);
 

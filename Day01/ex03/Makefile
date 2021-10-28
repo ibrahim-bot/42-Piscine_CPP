@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ibrahim <ibrahim@student.42.fr>            +#+  +:+       +#+         #
+#    By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 15:34:22 by ibrahim           #+#    #+#              #
-#    Updated: 2021/09/21 15:35:33 by ibrahim          ###   ########.fr        #
+#    Updated: 2021/10/26 12:25:49 by ichougra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 
-NAME	=	Zombie
+NAME	=	Human
 
 CFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 

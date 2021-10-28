@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:54:21 by ichougra          #+#    #+#             */
-/*   Updated: 2021/09/29 15:30:08 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 11:38:21 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main()
 {
     ClapTrap trap("POIRE");
+    ClapTrap tt;
 
     trap.attack("JIJI");
     trap.takeDamage(15);

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   MateriaSourceClass.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:52:58 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 15:03:38 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/28 17:13:28 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 17:18:56 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef MATERIASOURCECLASS_HPP
+#define MATERIASOURCECLASS_HPP
 
-#include "AMateria.hpp"
-#include "IMateriaSource.hpp"
+#include "ICharacterClass.hpp"
+#include "AMateriaClass.hpp"
+#include "IMateriaSourceClass.hpp"
 
 class MateriaSource : public IMateriaSource
 {
-    private:
-        /* data */
-    public:
-        MateriaSource(/* args */);
-        ~MateriaSource();
-        virtual void learnMateria(AMateria*);
-        virtual AMateria* createMateria(std::string const & type);
-};
+	private:
+		AMateria *_inv[4];
 
+	public:
+		MateriaSource(void);
+		MateriaSource(MateriaSource &copy);
+		virtual ~MateriaSource(void);
+
+		MateriaSource	&operator=(MateriaSource const &rhs);
+
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
+};
 
 #endif

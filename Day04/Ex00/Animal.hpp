@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:23:37 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:03:06 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 18:05:42 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ class Animal
     public:
         Animal(/* args */);
         Animal( std::string );
+        Animal( Animal const &);
         virtual ~Animal();
         virtual void makeSound() const;
         virtual std::string getType() const;
+
+        Animal & operator=(Animal const &);
 };
 
 class WrongAnimal

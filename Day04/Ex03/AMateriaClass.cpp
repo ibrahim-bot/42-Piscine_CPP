@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   AMateriaClass.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:49:09 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 15:53:56 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/28 17:10:43 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 17:10:59 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "AMateriaClass.hpp"
 
-Ice::Ice()
+AMateria::AMateria(void): _type("Default")
 {
-    this->_type = "ice";
-    return ;
+	return;
 }
 
-Ice::~Ice()
+AMateria::AMateria(std::string const &type): _type(type)
 {
-    return ;
+	return;
 }
 
-AMateria* Ice::clone() const
+AMateria::AMateria(AMateria const &copy)
 {
-    
+	*this = copy;
+}
+
+AMateria::~AMateria()
+{
+	return;
+}
+
+AMateria &AMateria::operator=(AMateria const &rhs)
+{
+	this->_type = rhs._type;
+	return *this;
+}
+
+std::string const &AMateria::getType() const
+{
+	return this->_type;
 }

@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:13:02 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/19 13:49:44 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 19:09:14 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Bureaucrat;
 class Form
 {
     private:
+        Form();
         std::string _name;
         bool _sign;
         int _grade;
@@ -42,8 +43,7 @@ class Form
 
                 virtual const char *what() const throw();
         };
-        Form();
-        Form(std::string name, int const grade, int const exec);
+        Form(std::string const name, int const grade, int exec);
         virtual ~Form();
 
         std::string getName(void) const;

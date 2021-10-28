@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:29:48 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:01:44 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 18:08:20 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ Cat::Cat(/* args */)
 {
     this->_type = "Cat";
     std::cout << "Constructor Cat called" << std::endl;
+    return ;
+}
+
+Cat::Cat(Cat const &copy)
+{
+    std::cout << "Constructor copy called" << std::endl;
+    *this = copy;
     return ;
 }
 
@@ -34,6 +41,12 @@ void Cat::makeSound() const
 std::string Cat::getType() const
 {
     return (this->_type);
+}
+
+Cat & Cat::operator=(Cat const &rhs)
+{
+    this->_type = rhs._type;
+    return *this;
 }
 
 WrongCat::WrongCat()

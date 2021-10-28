@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:23:19 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:00:01 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:49:07 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal()
 {
-    std::cout << "Constructor Animal called" << std::endl;
+    std::cout << "Default constructor Animal called" << std::endl;
     return ;
 }
 
@@ -22,6 +22,13 @@ Animal::Animal(std::string type)
 {
     this->_type = type;
     std::cout << "Constructor Animal called" << std::endl;
+    return ;
+}
+
+Animal::Animal(Animal const &copy)
+{
+    std::cout << "Constructor Animal copy called" << std::endl;
+    *this = copy;
     return ;
 }
 
@@ -58,4 +65,10 @@ void WrongAnimal::makeSound() const
 {
     std::cout << "I'm a WROOONGAnimal !" << std::endl;
     return ;
+}
+
+Animal & Animal::operator=(Animal const &rhs)
+{
+    this->_type = rhs._type;
+    return *this;
 }

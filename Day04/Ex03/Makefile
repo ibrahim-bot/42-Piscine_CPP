@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/05 14:26:37 by ichougra          #+#    #+#              #
-#    Updated: 2021/10/05 14:27:53 by ichougra         ###   ########.fr        #
+#    Created: 2021/10/28 17:14:48 by ichougra          #+#    #+#              #
+#    Updated: 2021/10/28 17:17:18 by ichougra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 
-NAME	=	Interface
+NAME	=	AMateria
 
 CFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
-SRCS	=	main.cpp Amateria.cpp Icharacter.cpp ImateriaSource.cpp
+SRCS	=	main.cpp AMateriaClass.cpp CharacterClass.cpp CureClass.cpp IceClass.cpp MateriaSourceClass.cpp
 
 OBJ	=	$(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 18:01:40 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/09/29 11:08:25 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/26 12:48:59 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Karen
     public:
         Karen(/* args */);
         ~Karen();
-        void complain( std::string level);
+        void karenFilter( std::string level);
 };
 
 int nb_lvl(std::string level);

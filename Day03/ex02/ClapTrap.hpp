@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:54:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/04 13:00:04 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 13:39:28 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ class ClapTrap
         int _Attackdamage;
 
     public:
+        ClapTrap( void ) {return ;};
         ClapTrap(std::string name);
+        ClapTrap(ClapTrap const &);
         ~ClapTrap();
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+
+        ClapTrap & operator=(ClapTrap const &);
 };
 
 #endif

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:56:28 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:56:54 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/05 13:06:33 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/05 13:28:52 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "Brain.hpp"
 
-MateriaSource::MateriaSource(/* args */)
+Brain::Brain(/* args */)
 {
+    std::cout << "Constructor Brain called" << std::endl;
     return ;
 }
 
-MateriaSource::~MateriaSource()
+Brain::~Brain()
 {
+    std::cout << "Destructor Brain called" << std::endl;
     return ;
-}
-
-void MateriaSource::learnMateria( AMateria* )
-{
-    
-}
-
-AMateria* MateriaSource::createMateria( std::string const & type )
-{
-    
 }

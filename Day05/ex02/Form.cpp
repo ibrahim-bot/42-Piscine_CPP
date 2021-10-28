@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:12:38 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/19 15:58:47 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:17:53 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 Form::Form()
 {
-    this->_name = "nøne";
-    this->_grade = 50;
-    this->_exec = 50;
-    this->_sign = 0;
     return ;
 }
 
@@ -118,14 +114,14 @@ Form &Form::operator=(const Form &rhs)
 
 std::ostream &operator<<(std::ostream &out, const Form &rhs)
 {
-    out << rhs.getName() << " Form is ";
+    out << "The " << rhs.getName() << " Form is ";
     if (rhs.getSign() == 0)
-        out << "no sign";
+        out << "not signed,";
     else 
-        out <<  "sign";
-    out << " the grade for sign is ";
+        out <<  "signed,";
+    out << " The grade to sign it must be greater than or equal to ";
     out << rhs.getGrade();
-    out << " and Grade for execute ";
+    out << " and his Grade for execute must be greater than or equal to ";
     out << rhs.getExec();
     out << std::endl;
     return (out);

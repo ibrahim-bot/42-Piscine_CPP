@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:05:18 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:31:20 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:12:14 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,28 @@
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Animal *tab[100];
 
+	for (int i = 0; i <= 99; i++)
+	{
+		if (i % 2)
+			tab[i] = new Dog;
+		else
+			tab[i] = new Cat;
+	}
+	for (int j = 0; j <= 99; j++)
+	{
+		delete tab[j];
+	}
 
-    delete j;//should not create a leak
-    delete i;
+	std::cout << "\n=============Construction Dog============" << std::endl;
+
+	Dog chien;
     
+	std::cout << "\n=============Construction Copy Dog============" << std::endl;
+	{
+		Dog tmp = chien;
+	}
+    std::cout << "\n" << std::endl;
     return (0);
 }

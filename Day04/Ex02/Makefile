@@ -6,7 +6,7 @@
 #    By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 17:27:26 by ichougra          #+#    #+#              #
-#    Updated: 2021/10/05 14:20:23 by ichougra         ###   ########.fr        #
+#    Updated: 2021/10/28 15:27:55 by ichougra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME	=	Abstract
 
 CFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
-SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJ	=	$(SRCS:.cpp=.o)
 

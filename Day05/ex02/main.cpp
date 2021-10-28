@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/20 12:36:05 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:18:45 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ int main()
         // robot.beSigned(bb);
         // bb.executeForm(robot);
 
-        PresidentialPardonForm lop("werty");
+        // PresidentialPardonForm lop("werty");
 
         //std::cout << std::endl;
         
-        bb.executeForm(lop);
+        // bb.executeForm(lop);
 
-        lop.beSigned(bb);
-        bb.executeForm(lop);
+        // lop.beSigned(bb);
+        // bb.executeForm(lop);
     }
     catch (const std::exception& e)
     {

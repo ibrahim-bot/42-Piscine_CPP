@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:16:00 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 12:05:32 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 19:16:22 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 Bureaucrat::Bureaucrat(/* args */)
 {
-    this->_name = "none";
-    this->_grade = 1;
     return ;
 }
 

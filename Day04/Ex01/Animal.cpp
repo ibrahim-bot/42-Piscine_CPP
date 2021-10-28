@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:23:19 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:22:12 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 13:38:30 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ Animal::Animal(std::string type)
     return ;
 }
 
+Animal::Animal(Animal const &copy)
+{
+    std::cout << "Constructor Animal copy called" << std::endl;
+    *this = copy;
+    return ;
+}
+
 Animal::~Animal()
 {
     std::cout << "Destructor Animal called" << std::endl;
@@ -40,4 +47,10 @@ void Animal::makeSound() const
 std::string Animal::getType() const
 {
     return (this->_type);
+}
+
+Animal & Animal::operator=(Animal const &rhs)
+{
+    this->_type = rhs._type;
+    return *this;
 }

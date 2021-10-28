@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:26:49 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:29:44 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:09:54 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,17 @@ Dog::Dog(/* args */)
     return ;
 }
 
+Dog::Dog(Dog const &copy)
+{
+    std::cout << "Constructor Dog copy called" << std::endl;
+    this->ideas = new Brain();
+    *ideas = *(copy.ideas);
+}
+
 Dog::~Dog()
 {
-    std::cout << "Destructor Dog called" << std::endl;
     delete this->ideas;
+    std::cout << "Destructor Dog called" << std::endl;
     return ;
 }
 
@@ -36,4 +43,11 @@ void Dog::makeSound() const
 std::string Dog::getType() const
 {
     return (this->_type);
+}
+
+Dog & Dog::operator=(Dog const &rhs)
+{
+    this->ideas = new Brain();
+    *ideas = *(rhs.ideas);
+    return *this;
 }

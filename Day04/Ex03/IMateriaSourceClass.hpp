@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSourceClass.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:34:17 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 15:52:43 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/28 17:13:11 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 17:13:12 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#ifndef IMATERIASOURCECLASS_HPP
+# define IMATERIASOURCECLASS_HPP
 
-AMateria::AMateria()
+class IMateriaSource
 {
-    return ;
-}
+	public:
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+		virtual ~IMateriaSource() {}
+};
 
-AMateria::AMateria(std::string const & type)
-{
-    this->_type = type;
-    return ;
-}
-
-AMateria::~AMateria()
-{
-    return ;
-}
-
-std::string const & AMateria::getType() const
-{
-    return (this->_type);
-}
+#endif

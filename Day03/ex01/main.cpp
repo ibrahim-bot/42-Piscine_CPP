@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:54:21 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/04 12:43:11 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 13:24:18 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ int main()
     clap.beRepaired(30);
     clap.attack("JIJI");
     
+    std::cout << std::endl;
     ScavTrap Scav("POMME");
 
     Scav.attack("BANANE");
     Scav.takeDamage(50);
-   // clap.attack("WIII");
     Scav.beRepaired(150);
     Scav.attack("ANANAS");
     Scav.guardGate();
     
+    std::cout << std::endl;
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/19 13:55:42 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:15:02 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ int main()
 {
     try
     {
-        Bureaucrat op("JIJI", 2);
-        Bureaucrat b("TEST", 50);
-        Form t("NUIT", 50, 20);
-        Form bt("POIU", 40, 30);
+        Bureaucrat jiji("JIJI", 2);
+        Form nuit("NUIT", 50, 20);
         
-        std::cout << t;
+        std::cout << nuit;
+        nuit.beSigned(jiji);
+        std::cout << nuit;
 
-        t.beSigned(op);
-        std::cout << t;
-
-        bt.beSigned(b);
-        std::cout << bt;
+        Bureaucrat test("TEST", 50);
+        Form blop("BLOP", 40, 30);
+        
+        std::cout << std::endl;
+        blop.beSigned(test);
+        std::cout << blop;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
     return (0);
-}
+} 

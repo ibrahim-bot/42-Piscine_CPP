@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 14:08:10 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:13:42 by ichougra         ###   ########.fr       */
+/*   Created: 2021/10/04 17:28:55 by ichougra          #+#    #+#             */
+/*   Updated: 2021/10/28 13:39:18 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : virtual public Animal
 {
     private:
-        /* data */
+        Brain* ideas;
 
     public:
         Cat(/* args */);
-        ~Cat();
-        void makeSound();
+        Cat(Cat const &);
+        virtual ~Cat();
+        virtual std::string getType() const;
+        virtual void makeSound() const;
+
+        Cat & operator=(Cat const &);
 };
 
 #endif
