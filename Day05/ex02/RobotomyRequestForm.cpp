@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:17:44 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/20 12:24:43 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:30:58 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyForm", 72, 45)
 {
     this->_target = target;
+    return ;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy)
+{
+    *this = copy;
     return ;
 }
 
@@ -37,4 +43,10 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
         std::cout << " a bien été robotizé" << std::endl;
     else
         std::cout << " echec de la robotization" << std::endl;
+}
+
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
+{
+    this->_target = rhs._target;
+    return *this;
 }

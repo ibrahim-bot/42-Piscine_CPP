@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:15:25 by ibrahim           #+#    #+#             */
-/*   Updated: 2021/10/27 20:18:45 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:22:32 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,37 +20,26 @@ int main()
 {
     try 
     {
-        Bureaucrat bb("BOSS", 30);
-        // Bureaucrat oui("EIE", 138);
-        // ShrubberyCreationForm non("WE");
-
-        // oui.executeForm(non);
+        Bureaucrat boss("BOSS", 1);
         
-        // non.beSigned(oui);
-        // oui.executeForm(non);
-        
-        // oui.incrementGrade();
-        // oui.executeForm(non);
+        ShrubberyCreationForm shrub("WE");
 
+
+        // boss.executeForm(shrub); // Error not sign Form
+        
+        shrub.beSigned(boss);      // shrub demande a boss pour etre signe
+        boss.executeForm(shrub);   // execute car form signer
+        
         
         // RobotomyRequestForm robot("Joru");
-
-        // std::cout << std::endl;
         
-        // oui.executeForm(robot);
-        // bb.executeForm(robot);
-
-        // robot.beSigned(bb);
-        // bb.executeForm(robot);
+        // robot.beSigned(boss);
+        // boss.executeForm(robot);
 
         // PresidentialPardonForm lop("werty");
-
-        //std::cout << std::endl;
         
-        // bb.executeForm(lop);
-
-        // lop.beSigned(bb);
-        // bb.executeForm(lop);
+        // lop.beSigned(boss);
+        // boss.executeForm(lop);
     }
     catch (const std::exception& e)
     {

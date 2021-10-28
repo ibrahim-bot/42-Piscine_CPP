@@ -6,7 +6,7 @@
 /*   By: ichougra <ichougra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:12:38 by ichougra          #+#    #+#             */
-/*   Updated: 2021/10/27 20:17:53 by ichougra         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:25:36 by ichougra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ Form::Form(std::string name, int const grade, int const exec)
     else
         this->_exec = exec;
     this->_sign = 0;
+    return ;
+}
+
+Form::Form(Form const &copy)
+{
+    *this = copy;
     return ;
 }
 
